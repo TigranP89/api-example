@@ -1,0 +1,177 @@
+{
+	"info": {
+		"_postman_id": "976f02be-6ae5-4c1b-a61d-f3d884866922",
+		"name": "user_api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19277495"
+	},
+	"item": [
+		{
+			"name": "Get All Users",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJhdWQiOiJiOWM3MWE4NC04ZWM4LTQ3ODItYWM5YS0yNjc3NzliMDNiNWEiLCJpYXQiOjE2ODU3OTA0NzAsImlzcyI6Ind3dy51c2Vycy5jb20iLCJuYmYiOjE2ODU3OTA0NzAsImV4cCI6MTY4NTc5NDA3MH0.0LU_1tAEt3xJ8y4MWMxsmf_9ZiaW0MMmyOEc4HUMtEiB35EfVpTd1dKOSlrJaLjDTi-H2gzsJDY3O5A8spEW-g",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "127.0.0.1:8000/user",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Save User",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJhdWQiOiJiOWM3MWE4NC04ZWM4LTQ3ODItYWM5YS0yNjc3NzliMDNiNWEiLCJpYXQiOjE2ODU3OTM5MzAsImlzcyI6Ind3dy51c2Vycy5jb20iLCJuYmYiOjE2ODU3OTM5MzAsImV4cCI6MTY4NTc5NzUzMH0.knU6KkJRZXNXOhDJhwWiFt2zpfeVyjsk1QtcdXPhfMcKy1xK1Sn2TMzhoTketQcoFDQirbGc3netmjGipW4AfA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "  \r\n{\r\n    \"firstname\": \"Carrie\",\r\n    \"lastname\": \"Black\",\r\n    \"email\": \"carrie@mail.com\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:8000/user",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"user"
+					],
+					"query": [
+						{
+							"key": "firstname",
+							"value": "Arsen",
+							"disabled": true
+						},
+						{
+							"key": "lastname",
+							"value": "Cole",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update User",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJhdWQiOiJiOWM3MWE4NC04ZWM4LTQ3ODItYWM5YS0yNjc3NzliMDNiNWEiLCJpYXQiOjE2ODU3OTM5MzAsImlzcyI6Ind3dy51c2Vycy5jb20iLCJuYmYiOjE2ODU3OTM5MzAsImV4cCI6MTY4NTc5NzUzMH0.knU6KkJRZXNXOhDJhwWiFt2zpfeVyjsk1QtcdXPhfMcKy1xK1Sn2TMzhoTketQcoFDQirbGc3netmjGipW4AfA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstname\": \"Maria\",\r\n    \"lastname\": \"Page\",\r\n    \"email\": \"maria.page@mail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:8000/user/1",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"user",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete User",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJhdWQiOiJiOWM3MWE4NC04ZWM4LTQ3ODItYWM5YS0yNjc3NzliMDNiNWEiLCJpYXQiOjE2ODU3OTM5MzAsImlzcyI6Ind3dy51c2Vycy5jb20iLCJuYmYiOjE2ODU3OTM5MzAsImV4cCI6MTY4NTc5NzUzMH0.knU6KkJRZXNXOhDJhwWiFt2zpfeVyjsk1QtcdXPhfMcKy1xK1Sn2TMzhoTketQcoFDQirbGc3netmjGipW4AfA",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "127.0.0.1:8000/user/13",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"user",
+						"13"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Token",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "127.0.0.1:8000/token.php",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"token.php"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

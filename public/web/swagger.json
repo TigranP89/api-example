@@ -1,0 +1,160 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "OpenApi Demo",
+        "description": "L5 Swagger OpenApi description",
+        "contact": {
+            "email": "tigranpetrasyan@gmail.com"
+        },
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/user": {
+            "get": {
+                "tags": [
+                    "Users"
+                ],
+                "summary": "Method to read all saved users from database.",
+                "operationId": "969e1e46d530115a8c19052078d425a6",
+                "responses": {
+                    "200": {
+                        "description": "Get All User"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Users"
+                ],
+                "summary": "Method to create new user.",
+                "operationId": "576746b7522f02e7038c774a02aa52df",
+                "requestBody": {
+                    "content": {
+                        "json": {
+                            "schema": {
+                                "properties": {
+                                    "firstname": {
+                                        "type": "string"
+                                    },
+                                    "lastname": {
+                                        "type": "string"
+                                    },
+                                    "email": {
+                                        "type": "email"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Save User"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
+        "/user/{id}": {
+            "get": {
+                "tags": [
+                    "Users"
+                ],
+                "summary": "Method to get single user.",
+                "operationId": "b725572f4d415fc13e0344a25feed0b3",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "description": "The id passed to get data like query string",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Get User"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Users"
+                ],
+                "summary": "Method to update user.",
+                "operationId": "d7db3d8750802bd08358c5674ceb882f",
+                "requestBody": {
+                    "content": {
+                        "json": {
+                            "schema": {
+                                "properties": {
+                                    "id": {
+                                        "type": "integer"
+                                    },
+                                    "firstname": {
+                                        "type": "string"
+                                    },
+                                    "lastname": {
+                                        "type": "string"
+                                    },
+                                    "email": {
+                                        "type": "email"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Update User"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Users"
+                ],
+                "summary": "Method to delete user from database.",
+                "operationId": "0c1fd0df41037ec42bfc0c229d5465fe",
+                "requestBody": {
+                    "content": {
+                        "json": {
+                            "schema": {
+                                "properties": {
+                                    "id": {
+                                        "type": "integer"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Delete User"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        }
+    }
+}
